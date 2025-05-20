@@ -1,0 +1,50 @@
+from PyQt6 import QtCore,QtWidgets
+from PyQt6.QtGui import QIcon, QPixmap
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setWindowIcon(QIcon(QPixmap('logo.jpg')))
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("")
+        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.tableWidget = QtWidgets.QTableWidget(parent=self.centralwidget)
+        self.tableWidget.setGeometry(QtCore.QRect(10, 40, 781, 471))
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.addButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.addButton.setGeometry(QtCore.QRect(40, 520, 121, 31))
+        self.addButton.setObjectName("addButton")
+        self.infoButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.infoButton.setGeometry(QtCore.QRect(210, 520, 131, 31))
+        self.infoButton.setObjectName("infoButton")
+        self.basketButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.basketButton.setGeometry(QtCore.QRect(460, 520, 121, 31))
+        self.basketButton.setObjectName("basketButton")
+        self.backButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.backButton.setGeometry(QtCore.QRect(640, 520, 121, 31))
+        self.backButton.setObjectName("backButton")
+        self.comboBox = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.comboBox.setGeometry(QtCore.QRect(570, 10, 221, 22))
+        self.comboBox.setObjectName("comboBox")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.addButton.setText(_translate("MainWindow", "добавить в корзину"))
+        self.infoButton.setText(_translate("MainWindow", "информация о товаре"))
+        self.basketButton.setText(_translate("MainWindow", "перейти в корзину"))
+        self.backButton.setText(_translate("MainWindow", "выход"))
